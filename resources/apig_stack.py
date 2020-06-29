@@ -9,7 +9,7 @@ from aws_cdk import aws_s3 as _s3
 class ApigStack(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         self.add_lambda_function()
-        # self.add_apig()
+        self.add_apig()
 
     def add_lambda_function(self):
         self.lambda_function = _lambda.Function(
@@ -17,7 +17,7 @@ class ApigStack(core.Stack):
             "LambdaFunction",
             runtime=_lambda.Runtime.PYTHON_3_7,
             handler="main.handler",
-            code=_lambda.Code.from_asset(os.path.join(os.path.dirname(__file__), "lambda")),
+            code=_lambda.Code.asset(os.path.join(os.path.dirname(__file__), "lambda")),
             function_name="fastapi-serverless-cdk-lambda",
         )
 
