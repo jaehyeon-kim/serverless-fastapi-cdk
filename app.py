@@ -2,10 +2,11 @@
 
 from aws_cdk import core
 
-from serverless_fastapi_cdk.serverless_fastapi_cdk_stack import ServerlessFastapiCdkStack
+from resources.apig_stack import ApigStack
 
 
 app = core.App()
-ServerlessFastapiCdkStack(app, "serverless-fastapi-cdk")
+
+ApigStack(app, "serverless-fastapi-cdk")
 
 app.synth()

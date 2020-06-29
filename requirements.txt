@@ -1,1 +1,6 @@
--e .
+-i https://pypi.org/simple
+fastapi==0.58.1
+mangum==0.10.0b1
+pydantic==1.5.1
+starlette==0.13.4
+typing-extensions==3.7.4.2
